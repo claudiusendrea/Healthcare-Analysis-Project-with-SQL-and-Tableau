@@ -15,7 +15,10 @@ The challenges of this project are:
 6. What is the distribution of admission type?
 7. What medications are most commonly prescribed for specific medical conditions?
 8. Is there a correlation between gender and the prevalence of certain medical conditions?
-Process
+
+   
+Process:
+
 The data for this analysis contains one table which was created and then imported to PostreSQL.
 
 
@@ -83,6 +86,8 @@ Because the data contained negative numbers in the billingamount column, I conve
     
 1. What is the average cost per day for a patient? What was the average billing amount?
 2. What is the average time the patients typically spend in the hospital?
+
+   
 To answer these questions I used the aggregation function AVG to calculate the average billing amount for all patients, to find out the the average length of stay in the hospital for patients and to determine the average cost per day for a patient by dividing the average billing amount by the average length of stay.
 
 
@@ -96,6 +101,7 @@ To answer these questions I used the aggregation function AVG to calculate the a
 
  
 3. Are there any patterns in billing amounts related to specific medical conditions?
+   
 To identify patterns in billing amounts related to specific medical conditions, I used the aggregation functions: COUNT, SUM, AVG, MIN and MAX. Also I used GROUP BY and ORDER BY functions to extract specific data. The SQL query aggregates billing data by medical condition, providing summary statistics such as total records, total billing amount, average billing amount, and the minimum and maximum billing amounts for each condition. 
 
            SELECT 
@@ -113,7 +119,8 @@ To identify patterns in billing amounts related to specific medical conditions, 
                 medicalcondition;
  
 
-5. What are the most common medical conditions for different age groups?
+4. What are the most common medical conditions for different age groups?
+   
 First, I wanted to see the minimum and maximum age for the patients, therefore I used the aggregation functions: MIN and MAX.
 
  
@@ -123,7 +130,7 @@ First, I wanted to see the minimum and maximum age for the patients, therefore I
                 FROM patienten
 
    
-Based on this information, I divided the patients into 8 different age groups.  To add the condition and return specific values, I used the CASE WHEN functions.The group by function groups the results by each medical condition so that the counts are calculated for each condition separately. The SQL query provided is designed to identify the most common medical conditions for different age groups by counting the occurrences of each condition within specified age ranges.
+Based on this information, I divided the patients into 8 different age groups. To add the condition and return specific values, I used the CASE WHEN functions.The group by function groups the results by each medical condition so that the counts are calculated for each condition separately. The SQL query provided is designed to identify the most common medical conditions for different age groups by counting the occurrences of each condition within specified age ranges.
 
        SELECT medicalcondition, 
          count (CASE WHEN age<21 THEN 1 end) AS "age<21",
@@ -138,7 +145,8 @@ Based on this information, I divided the patients into 8 different age groups.  
         GROUP BY medicalcondition
 
 
-7. Which doctors have the highest number of patient admissions?
+5. Which doctors have the highest number of patient admissions?
+   
 This part of the query counts the number of doctors. The SQL query effectively identifies which doctors have the highest number of patient admissions by counting the doctor and sorting the results in descending order.
 
             SELECT doctor,
@@ -150,7 +158,8 @@ This part of the query counts the number of doctors. The SQL query effectively i
 
 
 
-9. What is the distribution of admission type?
+6. What is the distribution of admission type?
+   
 In this query I counted the number of records for each admission type and assign this count to a new column. I used the aggregation function COUNT.
 
        SELECT admissiontype,    
@@ -161,7 +170,8 @@ In this query I counted the number of records for each admission type and assign
             ORDER BY admissiontype
    
 
-11. What medications are most commonly prescribed for specific medical conditions?
+7. What medications are most commonly prescribed for specific medical conditions?
+   
 I used the same query as above to effectively identify the most commonly prescribed medications for specific medical conditions by counting and organizing the data by condition and medication. 
 
             SELECT 
@@ -173,6 +183,7 @@ I used the same query as above to effectively identify the most commonly prescri
             ORDER BY medicalcondition, totalRecords desc
 
 8. Is there a correlation between gender and the prevalence of certain medical conditions?
+   
 The SQL query aims to explore the correlation between gender and the prevalence of certain medical conditions by counting the occurrences of each medical condition for each gender.
 
                 SELECT gender, medicalcondition, count(gender)
