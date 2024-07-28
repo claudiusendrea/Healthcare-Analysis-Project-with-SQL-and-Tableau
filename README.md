@@ -201,21 +201,29 @@ https://public.tableau.com/app/profile/claudiu.sendrea/viz/Healthcare2_172155091
 
 Findings
 1. What is the average cost per day for a patient? What was the average billing amount?
+   
 Average cost per day for a patient: 1648 EUR
 Average billing amount: 25546 EUR
-2. What is the average time the patients typically spend in the hospital?
+
+3. What is the average time the patients typically spend in the hospital?
+
 Average time spent in the hospital: 15 days
-3. Are there any patterns in billing amounts related to specific medical conditions?
+
+4. Are there any patterns in billing amounts related to specific medical conditions?
+
 There is a wide range between the minimum and maximum billing amounts for each condition. For instance, cancer has the lowest minimum billing amount at 9 EUR, while hypertension has the highest maximum billing amount at 52 764 EUR. This significant range suggests variability in treatment costs based on the severity and specific requirements of individual cases.
 The average billing amounts across different medical conditions are relatively close, ranging from approximately 25 154 EUR (cancer) to 25 806 EUR (obesity). This indicates a certain level of consistency in the overall cost structure across these conditions.
 The minimum billing amounts are relatively low across all conditions, indicating that there are cases with minimal intervention or treatment required. 
-4. What are the most common medical conditions for different age groups?
+
+5. What are the most common medical conditions for different age groups?
+
 The data reveals distinct patterns in the prevalence of medical conditions across different age groups. Arthritis is prevalent in the youngest and oldest groups, while obesity and diabetes are significant concerns in middle age. Hypertension becomes more common in the elderly, indicating changing health priorities as people age.
 
-5. Which doctors have the highest number of patient admissions?
+6. Which doctors have the highest number of patient admissions?
+
 This information can be useful for hospital management to recognize doctors with high patient volumes and potentially adjust their schedules or support staff to ensure optimal patient care.
 
-6. What is the distribution of admission type?
+7. What is the distribution of admission type?
 
 The distribution of admission types shows that there is a relatively even spread among Elective, Emergency, and Urgent admissions. Elective admissions are the most common, followed closely by Urgent and then Emergency admissions. This distribution suggests a balanced approach to different types of patient admissions.
 
